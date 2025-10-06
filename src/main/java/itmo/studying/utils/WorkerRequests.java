@@ -12,11 +12,11 @@ import itmo.studying.exceptions.NotInDeclaredLimitsException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class WorkerAsker {
+public class WorkerRequests {
     private Scanner userScanner;
     private boolean fileMode;
 
-    public WorkerAsker(Scanner userScanner) {
+    public WorkerRequests(Scanner userScanner) {
         this.userScanner = userScanner;
         fileMode = false;
     }
