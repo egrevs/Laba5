@@ -1,0 +1,49 @@
+{
+  "1": {
+    "id": 1,
+    "name": "Иван Петров",
+    "coordinates": {
+      "x": 120,
+      "y": 45.6
+    },
+    "creationDate": "2025-10-05",
+    "salary": 75000.0,
+    "position": "HEAD_OF_DEPARTMENT",
+    "status": "HIRED",
+    "organization": {
+      "fullName": "ООО ТехноСфера",
+      "annualTurnover": 2500000.0,
+      "employeesCount": 120
+    }
+  },
+  "2": {
+    "id": 2,
+    "name": "Анна Смирнова",
+    "coordinates": {
+      "x": 80,
+      "y": 100.2
+    },
+    "creationDate": "2025-10-04",
+    "salary": 52000.0,
+    "position": "BAKER",
+    "status": "REGULAR",
+    "organization": {
+      "fullName": "Пекарня 'Золотой колос'",
+      "annualTurnover": 870000.0,
+      "employeesCount": 15
+    }
+  },
+  "3": {
+    "id": 3,
+    "name": "Ольга Иванова",
+    "coordinates": {
+      "x": 60,
+      "y": 150.0
+    },
+    "creationDate": "2025-09-29",
+    "salary": 45000.0,
+    "position": "CLEANER",
+    "status": "FIRED",
+    "organization": null
+  }
+}
