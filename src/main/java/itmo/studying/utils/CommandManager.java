@@ -159,6 +159,11 @@ public class CommandManager {
         return updateCommand.execute(argument);
     }
 
+    public boolean noSuchCommand(String command) {
+        Console.println("Команда '" + command + "' не найдена. Наберите 'help' для справки.");
+        return false;
+    }
+
     @Override
     public String toString() {
         return "CommandManager (класс-обертка для работы с командами)";

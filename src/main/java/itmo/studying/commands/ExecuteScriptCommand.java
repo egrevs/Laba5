@@ -5,7 +5,7 @@ import itmo.studying.utils.Console;
 
 public class ExecuteScriptCommand extends AbstractCommand {
 
-    public ExecuteScriptCommand(String name, String description) {
+    public ExecuteScriptCommand() {
         super("execute_script file_name", "считать и исполнить скрипт из указанного файла");
     }
 
