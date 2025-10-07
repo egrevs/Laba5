@@ -2,7 +2,7 @@ package itmo.studying.commands;
 
 import java.util.Objects;
 
-public abstract class AbstractCommand implements Command{
+public abstract class AbstractCommand implements Command {
     private String name;
     private String description;
 

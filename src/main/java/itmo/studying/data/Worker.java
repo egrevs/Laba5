@@ -127,23 +127,23 @@ public class Worker implements Comparable<Worker> {
     }
 
     private void validateFields(String name, Coordinates coordinates, Float salary, Position position,
-                                Status status, Organization organization){
-        if (name == null || name.isBlank()){
+                                Status status, Organization organization) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Поле не может быть пустым или иметь значение null!");
         }
-        if (coordinates == null){
+        if (coordinates == null) {
             throw new IllegalArgumentException("Поле не может иметь значение null!");
         }
-        if (salary == null || salary < 0){
+        if (salary == null || salary < 0) {
             throw new IllegalArgumentException("Поле не может иметь значение null или быть меньше 0!");
         }
-        if (position == null){
+        if (position == null) {
             throw new IllegalArgumentException("Поле не может иметь значение null!");
         }
-        if (status == null){
+        if (status == null) {
             throw new IllegalArgumentException("Поле не может иметь значение null!");
         }
-        if (organization == null){
+        if (organization == null) {
             throw new IllegalArgumentException("Поле не может иметь значение null!");
         }
     }

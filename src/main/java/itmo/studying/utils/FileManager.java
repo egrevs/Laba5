@@ -19,7 +19,7 @@ public class FileManager {
         this.envName = envName;
     }
 
-    public HashMap<Integer, Worker> readCollection(){
+    public HashMap<Integer, Worker> readCollection() {
         String path = System.getenv(envName);
         if (path == null) {
             throw new InvalidFileException("Переменная окружения " + envName + " не задана!");
@@ -32,11 +32,12 @@ public class FileManager {
 
         try (Scanner scanner = new Scanner(file)) {
             StringBuilder jsonBuilder = new StringBuilder();
-            while (scanner.hasNextLine()){
+            while (scanner.hasNextLine()) {
                 jsonBuilder.append(scanner.nextLine());
             }
             String json = jsonBuilder.toString();
-            Type collectionType = new TypeToken<HashMap<Integer, Worker>>(){}.getType();
+            Type collectionType = new TypeToken<HashMap<Integer, Worker>>() {
+            }.getType();
             return gson.fromJson(json, collectionType);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

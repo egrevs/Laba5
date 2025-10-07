@@ -158,8 +158,8 @@ public class CollectionManager {
 
         int counter = 0;
         Iterator<Map.Entry<Long, Worker>> iterator = hashMap.entrySet().iterator();
-        while (iterator.hasNext()){
-            if (iterator.next().getValue().getSalary().compareTo(salary) < 0){
+        while (iterator.hasNext()) {
+            if (iterator.next().getValue().getSalary().compareTo(salary) < 0) {
                 counter++;
             }
         }

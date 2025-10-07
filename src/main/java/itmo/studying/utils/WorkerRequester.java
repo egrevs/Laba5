@@ -12,11 +12,11 @@ import itmo.studying.exceptions.NotInDeclaredLimitsException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class WorkerRequests {
+public class WorkerRequester {
     private Scanner userScanner;
     private boolean fileMode;
 
-    public WorkerRequests(Scanner userScanner) {
+    public WorkerRequester(Scanner userScanner) {
         this.userScanner = userScanner;
         fileMode = false;
     }
@@ -178,7 +178,7 @@ public class WorkerRequests {
     public Status askStatus() throws IncorrectInputInScriptException {
         String strStatus;
         Status status;
-        while (true){
+        while (true) {
             try {
                 Console.println("Список статусов сотрудника - " + Status.nameList());
                 Console.println("Введите статус сотрудника!");
@@ -285,6 +285,31 @@ public class WorkerRequests {
 
     public Organization askOrganization() throws IncorrectInputInScriptException {
         return new Organization(askOrganizationFullName(), askAnnualTurnover(), askEmployeesCount());
+    }
+
+    public boolean askQuestion(String question) throws IncorrectInputInScriptException {
+        String answer;
+        String finalQuestion = question + "(y/n)";
+        while (true) {
+            try {
+                Console.println(finalQuestion);
+                Console.print(">");
+                if (userScanner.next().isEmpty()) throw new NoSuchElementException();
+                answer = userScanner.nextLine().trim();
+                if (!answer.equals("y") && !answer.equals("n")) throw new NotInDeclaredLimitsException();
+                break;
+            } catch (NoSuchElementException e) {
+                Console.printErr("Ответ на вопрос не распознан!");
+                if (fileMode) throw new IncorrectInputInScriptException();
+            } catch (NotInDeclaredLimitsException e) {
+                Console.printErr("Ответами могут быть только 'y' и 'n'!");
+                if (fileMode) throw new IncorrectInputInScriptException();
+            } catch (IllegalStateException exception) {
+                Console.printErr("Непредвиденная ошибка!");
+                System.exit(0);
+            }
+        }
+        return answer.equals("y") ? true : false;
     }
 
     @Override

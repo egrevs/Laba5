@@ -1,4 +1,4 @@
 package itmo.studying.exceptions;
 
-public class IllegalStateException extends RuntimeException{
+public class IllegalStateException extends RuntimeException {
 }

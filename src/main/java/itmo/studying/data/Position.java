@@ -5,9 +5,9 @@ public enum Position {
     BAKER,
     CLEANER;
 
-    public static String nameList(){
+    public static String nameList() {
         String nameList = "";
-        for(Position position: Position.values()){
+        for (Position position : Position.values()) {
             nameList += position.name() + ", ";
         }
         return nameList.substring(0, nameList.length() - 2);

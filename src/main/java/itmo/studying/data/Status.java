@@ -5,9 +5,9 @@ public enum Status {
     HIRED,
     REGULAR;
 
-    public static String nameList(){
+    public static String nameList() {
         String nameList = "";
-        for (Status status: Status.values()){
+        for (Status status : Status.values()) {
             nameList += status.name() + ", ";
         }
         return nameList.substring(0, nameList.length() - 2);
