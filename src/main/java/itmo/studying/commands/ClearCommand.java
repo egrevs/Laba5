@@ -22,7 +22,7 @@ public class ClearCommand extends AbstractCommand {
             Console.println("Коллекция успешно очищена!");
             return true;
         } catch (WrongAmountOfElementsException e) {
-            Console.printErr("Использование: " + getName() + "!");
+            Console.printError("Использование: " + getName() + "!");
         } catch (CollectionIsEmptyException e) {
             Console.println("В коллекции итак нет элементов!");
         }

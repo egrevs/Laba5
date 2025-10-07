@@ -25,7 +25,7 @@ public class RemoveByKeyCommand extends AbstractCommand {
         } catch (WrongAmountOfElementsException e) {
             Console.println("Использование: " + getName() + "!");
         } catch (WorkerNotFoundException e) {
-            Console.printErr("Работник с таким ключем не найден!");
+            Console.printError("Работник с таким ключем не найден!");
         }
         return false;
     }

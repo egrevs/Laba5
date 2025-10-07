@@ -9,7 +9,7 @@ public class Console {
         System.out.print(argument);
     }
 
-    public static void printErr(String argument) {
+    public static void printError(String argument) {
         System.out.println("error: " + argument);
     }
 }

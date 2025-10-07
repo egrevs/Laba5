@@ -1,6 +1,5 @@
 package itmo.studying.commands;
 
-import itmo.studying.data.Status;
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;
@@ -26,7 +25,7 @@ public class GroupCountingByNameCommand extends AbstractCommand {
         } catch (WrongAmountOfElementsException e) {
             Console.println("Использование: " + getName() + "!");
         } catch (CollectionIsEmptyException e) {
-            Console.printErr("Коллекция пуста!");
+            Console.printError("Коллекция пуста!");
         }
         return false;
     }

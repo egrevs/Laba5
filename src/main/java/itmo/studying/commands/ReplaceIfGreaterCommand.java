@@ -42,9 +42,9 @@ public class ReplaceIfGreaterCommand extends AbstractCommand {
         } catch (IncorrectInputInScriptException e) {
             throw new RuntimeException(e);
         } catch (CollectionIsEmptyException e) {
-            Console.printErr("Коллекция пуста!");
+            Console.printError("Коллекция пуста!");
         } catch (WorkerNotFoundException e) {
-            Console.printErr("Работник с таким ключом не найден!");
+            Console.printError("Работник с таким ключом не найден!");
         }
         return false;
     }

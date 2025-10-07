@@ -93,7 +93,7 @@ public class CommandManager {
                 }
                 return true;
             } catch (CommandHistoryIsEmpty e) {
-                Console.printErr("Ни одна команда не была использована!");
+                Console.printError("Ни одна команда не была использована!");
             }
         }
         return false;

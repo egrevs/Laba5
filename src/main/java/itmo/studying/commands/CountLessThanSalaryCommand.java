@@ -25,7 +25,7 @@ public class CountLessThanSalaryCommand extends AbstractCommand{
         } catch (WrongAmountOfElementsException e) {
             Console.println("Использование: " + getName() + "!");
         } catch (CollectionIsEmptyException e) {
-            Console.printErr("Коллекция пуста!");
+            Console.printError("Коллекция пуста!");
         }
         return false;
     }

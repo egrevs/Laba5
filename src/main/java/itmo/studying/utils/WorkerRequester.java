@@ -55,7 +55,7 @@ public class WorkerRequester {
                 Console.println("Поле должно быть заполнено!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -75,13 +75,13 @@ public class WorkerRequester {
                 x = Long.parseLong(strX);
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Координата 'X' не распознана!");
+                Console.printError("Координата 'X' не распознана!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NumberFormatException e) {
-                Console.printErr("Значение должно быть представлено числом!");
+                Console.printError("Значение должно быть представлено числом!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -101,13 +101,13 @@ public class WorkerRequester {
                 y = Float.parseFloat(strY);
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Координата 'Y' не распознана!");
+                Console.printError("Координата 'Y' не распознана!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NumberFormatException e) {
-                Console.printErr("Значение должно быть представлено числом!");
+                Console.printError("Значение должно быть представлено числом!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -132,16 +132,16 @@ public class WorkerRequester {
                 if (salary < 0) throw new NotInDeclaredLimitsException();
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Значение зарплаты не распознано!");
+                Console.printError("Значение зарплаты не распознано!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NumberFormatException e) {
-                Console.printErr("Формат числа неправильный (0.0f)");
+                Console.printError("Формат числа неправильный (0.0f)");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NotInDeclaredLimitsException e) {
-                Console.printErr("Зарплата должна быть положительным числом!");
+                Console.printError("Зарплата должна быть положительным числом!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -162,13 +162,13 @@ public class WorkerRequester {
                 position = Position.valueOf(strPosition.toUpperCase());
                 break;
             } catch (IllegalArgumentException e) {
-                Console.printErr("Заданное значение не входите в список актуальных позиций!");
+                Console.printError("Заданное значение не входите в список актуальных позиций!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NoSuchElementException e) {
-                Console.printErr("Позиция работника не распознана!");
+                Console.printError("Позиция работника не распознана!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -189,13 +189,13 @@ public class WorkerRequester {
                 status = Status.valueOf(strStatus.toUpperCase());
                 break;
             } catch (IllegalArgumentException e) {
-                Console.printErr("Заданное значение не входите в список актуальных статусов работника!");
+                Console.printError("Заданное значение не входите в список актуальных статусов работника!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NoSuchElementException e) {
-                Console.printErr("Статус работника не распознан!");
+                Console.printError("Статус работника не распознан!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -214,13 +214,13 @@ public class WorkerRequester {
                 if (fileMode) Console.println("Полное название организации: " + name);
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Название организации не распознано!");
+                Console.printError("Название организации не распознано!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (MustBeNotEmptyException e) {
                 Console.println("Поле должно быть заполнено!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NullPointerException | IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -242,13 +242,13 @@ public class WorkerRequester {
                 if (fileMode) Console.println("Годовой оборот организации: " + annualTurnover);
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Годовой оборот не распознан!");
+                Console.printError("Годовой оборот не распознан!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (MustBeNotEmptyException | NotInDeclaredLimitsException | NumberFormatException e) {
-                Console.printErr("Поле должно быть заполнено положительным значением (0.0f)");
+                Console.printError("Поле должно быть заполнено положительным значением (0.0f)");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -270,13 +270,13 @@ public class WorkerRequester {
                 if (fileMode) Console.println("Количество сотрудников организации: " + employeesCount);
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Количество сотрудников не распознано!");
+                Console.printError("Количество сотрудников не распознано!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (MustBeNotEmptyException | NotInDeclaredLimitsException e) {
-                Console.printErr("Поле должно быть заполнено и иметь положительное значение!");
+                Console.printError("Поле должно быть заполнено и иметь положительное значение!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException e) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }
@@ -299,13 +299,13 @@ public class WorkerRequester {
                 if (!answer.equals("y") && !answer.equals("n")) throw new NotInDeclaredLimitsException();
                 break;
             } catch (NoSuchElementException e) {
-                Console.printErr("Ответ на вопрос не распознан!");
+                Console.printError("Ответ на вопрос не распознан!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (NotInDeclaredLimitsException e) {
-                Console.printErr("Ответами могут быть только 'y' и 'n'!");
+                Console.printError("Ответами могут быть только 'y' и 'n'!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException exception) {
-                Console.printErr("Непредвиденная ошибка!");
+                Console.printError("Непредвиденная ошибка!");
                 System.exit(0);
             }
         }

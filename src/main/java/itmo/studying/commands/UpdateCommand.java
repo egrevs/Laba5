@@ -59,9 +59,9 @@ public class UpdateCommand extends AbstractCommand {
         } catch (WrongAmountOfElementsException e) {
             Console.println("Использование: " + getName() + "!");
         } catch (WorkerNotFoundException e) {
-            Console.printErr("Работник не найден!");
+            Console.printError("Работник не найден!");
         } catch (CollectionIsEmptyException e) {
-            Console.printErr("Коллекция пуста!");
+            Console.printError("Коллекция пуста!");
         } catch (IncorrectInputInScriptException e) {
             throw new RuntimeException(e);
         }
