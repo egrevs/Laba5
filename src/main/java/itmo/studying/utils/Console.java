@@ -22,6 +22,7 @@ public class Console {
                 Console.println("$");
                 commands = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 commands[1] = commands[1].trim();
+                commandManager.addToHistory(commands[0]);
                 commandStatus = launchCommand(commands);
             } while (commandStatus != 2);
         } catch (NoSuchElementException exception) {
