@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда удаления всех работников со статусом, эквивалентным заданному.
+ */
+
 import itmo.studying.data.Status;
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;

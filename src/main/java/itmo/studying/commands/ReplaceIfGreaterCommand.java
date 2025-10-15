@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда замены значения по ключу, если новый элемент больше существующего.
+ */
+
 import itmo.studying.data.Worker;
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.IncorrectInputInScriptException;

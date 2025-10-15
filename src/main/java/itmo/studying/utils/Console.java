@@ -1,5 +1,11 @@
 package itmo.studying.utils;
 
+/**
+ * Консольный интерфейс: читает команды из пользовательского ввода или скрипта,
+ * диспетчеризует их через {@link CommandManager} и управляет режимами ввода
+ * (интерактивный/скриптовый) совместно с {@link WorkerRequester}.
+ */
+
 import itmo.studying.exceptions.IllegalStateException;
 import itmo.studying.exceptions.ScriptRecursionException;
 
@@ -27,7 +33,7 @@ public class Console {
         int commandStatus;
         try {
             do {
-                Console.println("$");
+                Console.print("$");
                 commands = (userScanner.nextLine().trim() + " ").split(" ", 2);
                 commands[1] = commands[1].trim();
                 commandManager.addToHistory(commands[0]);
@@ -48,10 +54,10 @@ public class Console {
         try (Scanner scriptScanner = new Scanner(new File(argument))) {
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
             Scanner tmpScanner = workerRequester.getUserScanner();
-            workerRequester.setUserScanner(tmpScanner);
+            workerRequester.setUserScanner(scriptScanner);
             workerRequester.setFileMode();
             do {
-                commands = (userScanner.nextLine().trim() + " ").split(" ", 2);
+                commands = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                 commands[1] = commands[1].trim();
                 while (scriptScanner.hasNextLine() && commands[0].isEmpty()) {
                     commands = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
@@ -107,19 +113,20 @@ public class Console {
                 if (!commandManager.clear(userCommand[1]))
                     return 1;
                 break;
-            case "countLessThanSalary":
+            case "count_less_than_salary":
                 if (!commandManager.countLessThanSalary(userCommand[1]))
                     return 1;
                 break;
-            case "executeScript":
-                if (!commandManager.executeScript(userCommand[1]))
-                    return 1;
+            case "execute_script":
+                int scriptStatus = scriptMode(userCommand[1]);
+                if (scriptStatus != 0)
+                    return scriptStatus;
                 break;
             case "exit":
                 if (!commandManager.exit(userCommand[1]))
                     return 1;
                 break;
-            case "groupCountingByName":
+            case "group_counting_by_name":
                 if (!commandManager.groupCountingByName(userCommand[1]))
                     return 1;
                 break;
@@ -135,19 +142,19 @@ public class Console {
                 if (!commandManager.info(userCommand[1]))
                     return 1;
                 break;
-            case "removeAllByStatus":
+            case "remove_all_by_status":
                 if (!commandManager.removeAllByStatus(userCommand[1]))
                     return 1;
                 break;
-            case "removeByKey":
+            case "remove_key":
                 if (!commandManager.removeByKey(userCommand[1]))
                     return 1;
                 break;
-            case "removeGreaterKey":
+            case "remove_greater_key":
                 if (!commandManager.removeGreaterKey(userCommand[1]))
                     return 1;
                 break;
-            case "replaceIfGreater":
+            case "replace_if_greater":
                 if (!commandManager.replaceIfGreater(userCommand[1]))
                     return 1;
                 break;
@@ -166,6 +173,7 @@ public class Console {
             case "insert":
                 if (!commandManager.insert(userCommand[1]))
                     return 1;
+                break;
             default:
                 if (!commandManager.noSuchCommand(userCommand[1]))
                     return 1;

@@ -1,5 +1,10 @@
 package itmo.studying.utils;
 
+/**
+ * Запрашивает у пользователя значения полей для создания/обновления Worker
+ * в интерактивном режиме и в режиме исполнения скриптов.
+ */
+
 import itmo.studying.data.Coordinates;
 import itmo.studying.data.Organization;
 import itmo.studying.data.Position;
@@ -95,7 +100,7 @@ public class WorkerRequester {
             try {
                 Console.println("Введите координату 'Y'!");
                 Console.print(">");
-                if (userScanner.hasNextLine()) throw new NoSuchElementException();
+                if (!userScanner.hasNextLine()) throw new NoSuchElementException();
                 strY = userScanner.nextLine().trim();
                 if (fileMode) Console.println("Координата Y: " + strY);
                 y = Float.parseFloat(strY);
@@ -245,7 +250,7 @@ public class WorkerRequester {
                 Console.printError("Годовой оборот не распознан!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (MustBeNotEmptyException | NotInDeclaredLimitsException | NumberFormatException e) {
-                Console.printError("Поле должно быть заполнено положительным значением (0.0f)");
+                Console.printError("Поле должно быть представлено значением!");
                 if (fileMode) throw new IncorrectInputInScriptException();
             } catch (IllegalStateException e) {
                 Console.printError("Непредвиденная ошибка!");
@@ -294,9 +299,12 @@ public class WorkerRequester {
             try {
                 Console.println(finalQuestion);
                 Console.print(">");
-                if (userScanner.next().isEmpty()) throw new NoSuchElementException();
+                if (!userScanner.hasNextLine()) throw new NoSuchElementException();
                 answer = userScanner.nextLine().trim();
-                if (!answer.equals("y") && !answer.equals("n")) throw new NotInDeclaredLimitsException();
+                if (fileMode) Console.println("Ответ: " + answer);
+                if (!answer.equalsIgnoreCase("y") && !answer.equalsIgnoreCase("n")) {
+                    throw new NotInDeclaredLimitsException();
+                }
                 break;
             } catch (NoSuchElementException e) {
                 Console.printError("Ответ на вопрос не распознан!");
@@ -309,7 +317,7 @@ public class WorkerRequester {
                 System.exit(0);
             }
         }
-        return answer.equals("y") ? true : false;
+        return answer.equalsIgnoreCase("y");
     }
 
     @Override

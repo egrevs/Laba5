@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда группировки работников по имени с выводом количества в каждой группе.
+ */
+
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;

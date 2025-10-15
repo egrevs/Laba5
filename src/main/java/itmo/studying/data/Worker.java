@@ -1,11 +1,16 @@
 package itmo.studying.data;
 
+/**
+ * Сущность работника коллекции. Имеет автоинкрементируемый идентификатор,
+ * набор обязательных полей и сравнение по идентификатору.
+ */
+
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Worker implements Comparable<Worker> {
-    private final AtomicInteger integer = new AtomicInteger(1);
+    private static final AtomicInteger integer = new AtomicInteger(0);
 
     private Integer id; //Поле не может быть null, Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -32,6 +37,10 @@ public class Worker implements Comparable<Worker> {
 
     public Integer getId() {
         return id;
+    }
+
+    public static void resetIdCounter(int nextId) {
+        integer.set(Math.max(0, nextId));
     }
 
     public String getName() {

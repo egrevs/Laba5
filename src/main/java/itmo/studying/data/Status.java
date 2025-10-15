@@ -1,5 +1,9 @@
 package itmo.studying.data;
 
+/**
+ * Статус трудоустройства работника.
+ */
+
 public enum Status {
     FIRED,
     HIRED,

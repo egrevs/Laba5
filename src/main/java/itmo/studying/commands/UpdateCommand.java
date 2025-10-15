@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда обновления существующего работника по идентификатору.
+ */
+
 import itmo.studying.data.*;
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.IncorrectInputInScriptException;

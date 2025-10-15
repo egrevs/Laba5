@@ -1,5 +1,10 @@
 package itmo.studying.utils;
 
+/**
+ * Регистрирует и выполняет команды, хранит историю последних вызовов,
+ * предоставляет фасадные методы для обращения к отдельным реализациям команд.
+ */
+
 import itmo.studying.commands.*;
 import itmo.studying.exceptions.CommandHistoryIsEmpty;
 

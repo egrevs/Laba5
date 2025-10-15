@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда отображения списка доступных команд и их описаний.
+ */
+
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.Console;
 

@@ -1,5 +1,10 @@
 package itmo.studying.utils;
 
+/**
+ * Читает и пишет коллекцию в JSON-файл, поддерживает (де)сериализацию LocalDate
+ * через кастомный адаптер Gson.
+ */
+
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import itmo.studying.data.Worker;
@@ -27,13 +32,15 @@ public class FileManager {
                 .create();
     }
 
-    public HashMap<Integer, Worker> readCollection() {
+    public HashMap<Long, Worker> readCollection() {
         String path = System.getenv(envName);
+        System.out.println("✅ ENV " + envName + " = " + path);
         if (path == null) {
             throw new InvalidFileException("Переменная окружения " + envName + " не задана!");
         }
 
         File file = new File(path);
+        System.out.println("📄 File exists: " + file.exists() + " | Size: " + file.length());
         if (!file.exists()) {
             throw new InvalidFileException("Файл не существует: " + path);
         }
@@ -43,9 +50,16 @@ public class FileManager {
             while (scanner.hasNextLine()) {
                 jsonBuilder.append(scanner.nextLine());
             }
-            String json = jsonBuilder.toString();
-            Type collectionType = new TypeToken<HashMap<Integer, Worker>>() {}.getType();
-            return gson.fromJson(json, collectionType);
+            String json = jsonBuilder.toString().trim();
+            if (json.isEmpty()) {
+                return new HashMap<>();
+            }
+            Type collectionType = new TypeToken<HashMap<Long, Worker>>() {}.getType();
+            HashMap<Long, Worker> map = gson.fromJson(json, collectionType);
+            if (map == null) {
+                return new HashMap<>();
+            }
+            return map;
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -77,7 +91,7 @@ public class FileManager {
     private static class LocalDateAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
         @Override
         public JsonElement serialize(LocalDate date, java.lang.reflect.Type typeOfSrc, JsonSerializationContext context) {
-            return new JsonPrimitive(date.toString()); // например "2025-10-15"
+            return new JsonPrimitive(date.toString());
         }
 
         @Override

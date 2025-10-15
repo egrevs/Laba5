@@ -2,6 +2,9 @@ package itmo.studying.data;
 
 import java.util.Objects;
 
+/**
+ * Модель координат работника. Хранит оси X и Y.
+ */
 public class Coordinates {
     private Long x; //Поле не может быть null
     private float y; //Максимальное значение поля: 198

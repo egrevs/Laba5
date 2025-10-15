@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда очистки коллекции.
+ */
+
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;

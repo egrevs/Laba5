@@ -1,5 +1,10 @@
 package itmo.studying.utils;
 
+/**
+ * Управляет коллекцией работников в памяти: загрузка/сохранение,
+ * операции вставки, обновления и удаления, а также агрегирующие запросы.
+ */
+
 import itmo.studying.data.Status;
 import itmo.studying.data.Worker;
 
@@ -167,7 +172,18 @@ public class CollectionManager {
     }
 
     private void loadCollection() {
-        fileManager.readCollection();
+        this.hashMap = fileManager.readCollection();
+        try {
+            int maxId = hashMap.values().stream()
+                    .map(Worker::getId)
+                    .filter(Objects::nonNull)
+                    .max(Integer::compareTo)
+                    .orElse(0);
+            // Ensure new Workers continue with unique incremented IDs
+            Worker.resetIdCounter(maxId);
+        } catch (Exception ignored) {
+            // Safe fallback: leave counter as-is
+        }
         lastInitTime = LocalDateTime.now();
     }
 

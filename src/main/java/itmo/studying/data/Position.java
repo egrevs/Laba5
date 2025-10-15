@@ -1,5 +1,9 @@
 package itmo.studying.data;
 
+/**
+ * Должность работника.
+ */
+
 public enum Position {
     HEAD_OF_DEPARTMENT,
     BAKER,

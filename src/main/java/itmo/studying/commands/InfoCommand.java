@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда вывода информации о коллекции: тип, размер, время инициализации и сохранения.
+ */
+
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;
 import itmo.studying.utils.Console;

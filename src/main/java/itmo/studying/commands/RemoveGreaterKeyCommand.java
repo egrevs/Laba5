@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда удаления из коллекции всех элементов, ключ которых превышает заданный.
+ */
+
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;

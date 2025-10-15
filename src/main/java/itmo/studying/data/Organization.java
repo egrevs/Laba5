@@ -1,5 +1,9 @@
 package itmo.studying.data;
 
+/**
+ * Модель организации работника: полное имя, годовой оборот и число сотрудников.
+ */
+
 import java.util.Objects;
 
 public class Organization {

@@ -1,49 +1,53 @@
 {
   "1": {
-    "id": 1,
-    "name": "Иван Петров",
+    "id": 2,
+    "name": "Сергей",
     "coordinates": {
-      "x": 120,
-      "y": 45.6
+      "x": 12,
+      "y": 34.0
     },
-    "creationDate": "2025-10-05",
-    "salary": 75000.0,
-    "position": "HEAD_OF_DEPARTMENT",
+    "creationDate": "2025-10-15",
+    "salary": 5000.0,
+    "position": "BAKER",
     "status": "HIRED",
     "organization": {
-      "fullName": "ООО ТехноСфера",
-      "annualTurnover": 2500000.0,
-      "employeesCount": 120
+      "fullName": "АкваБанк",
+      "annualTurnover": 250000.0,
+      "employeesCount": 2
     }
   },
   "2": {
-    "id": 2,
-    "name": "Анна Смирнова",
+    "id": 3,
+    "name": "Славик",
     "coordinates": {
-      "x": 80,
-      "y": 100.2
+      "x": 43,
+      "y": 6.0
     },
-    "creationDate": "2025-10-04",
-    "salary": 52000.0,
-    "position": "BAKER",
-    "status": "REGULAR",
+    "creationDate": "2025-10-15",
+    "salary": 800.0,
+    "position": "CLEANER",
+    "status": "HIRED",
     "organization": {
-      "fullName": "Пекарня 'Золотой колос'",
-      "annualTurnover": 870000.0,
-      "employeesCount": 15
+      "fullName": "АкваБанк",
+      "annualTurnover": 250000.0,
+      "employeesCount": 2
     }
   },
-  "3": {
-    "id": 3,
-    "name": "Ольга Иванова",
+  "5": {
+    "id": 4,
+    "name": "John Doe",
     "coordinates": {
-      "x": 60,
-      "y": 150.0
+      "x": 10,
+      "y": 20.5
     },
-    "creationDate": "2025-09-29",
-    "salary": 45000.0,
-    "position": "CLEANER",
-    "status": "FIRED",
-    "organization": null
+    "creationDate": "2025-10-15",
+    "salary": 50000.0,
+    "position": "BAKER",
+    "status": "HIRED",
+    "organization": {
+      "fullName": "Acme Corp",
+      "annualTurnover": 1000000.0,
+      "employeesCount": 200
+    }
   }
 }

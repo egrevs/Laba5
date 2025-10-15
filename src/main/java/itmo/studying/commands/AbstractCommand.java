@@ -1,5 +1,10 @@
 package itmo.studying.commands;
 
+/**
+ * Базовый абстрактный класс команды, содержит имя и описание,
+ * а также общий контракт выполнения.
+ */
+
 import java.util.Objects;
 
 public abstract class AbstractCommand implements Command {

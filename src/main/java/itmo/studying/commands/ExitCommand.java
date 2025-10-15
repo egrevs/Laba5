@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда завершения работы приложения без сохранения.
+ */
+
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;
 import itmo.studying.utils.Console;

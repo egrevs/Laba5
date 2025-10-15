@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда удаления работника по ключу.
+ */
+
 import itmo.studying.exceptions.WorkerNotFoundException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;

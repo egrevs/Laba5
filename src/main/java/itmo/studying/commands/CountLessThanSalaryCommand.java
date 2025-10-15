@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда подсчета количества работников с зарплатой меньше заданной.
+ */
+
 import itmo.studying.exceptions.CollectionIsEmptyException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;

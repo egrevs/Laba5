@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда сохранения текущего состояния коллекции в файл.
+ */
+
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.CollectionManager;
 import itmo.studying.utils.Console;

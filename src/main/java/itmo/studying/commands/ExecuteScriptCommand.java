@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда запуска выполнения скрипта из файла.
+ */
+
 import itmo.studying.exceptions.WrongAmountOfElementsException;
 import itmo.studying.utils.Console;
 

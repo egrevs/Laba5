@@ -1,5 +1,9 @@
 package itmo.studying.commands;
 
+/**
+ * Команда вставки нового работника по ключу.
+ */
+
 import itmo.studying.data.Worker;
 import itmo.studying.exceptions.IncorrectInputInScriptException;
 import itmo.studying.exceptions.WrongAmountOfElementsException;
