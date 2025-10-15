@@ -179,10 +179,8 @@ public class CollectionManager {
                     .filter(Objects::nonNull)
                     .max(Integer::compareTo)
                     .orElse(0);
-            // Ensure new Workers continue with unique incremented IDs
             Worker.resetIdCounter(maxId);
         } catch (Exception ignored) {
-            // Safe fallback: leave counter as-is
         }
         lastInitTime = LocalDateTime.now();
     }
