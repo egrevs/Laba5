@@ -1,0 +1,15 @@
+insert 5
+John Doe
+10
+20.5
+50000
+BAKER
+HIRED
+Acme Corp
+1000000
+200
+show
+count_less_than_salary 60000
+group_counting_by_name
+save
+
