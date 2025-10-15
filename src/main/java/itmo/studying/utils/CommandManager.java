@@ -120,6 +120,7 @@ public class CommandManager {
     }
 
     public boolean help(String argument) {
+        commandList.forEach(command -> Console.println(command.getName() + " " + command.getDescription()));
         return helpCommand.execute(argument);
     }
 

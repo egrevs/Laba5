@@ -1,12 +1,15 @@
 package itmo.studying.commands;
 
 import itmo.studying.exceptions.WrongAmountOfElementsException;
+import itmo.studying.utils.CollectionManager;
 import itmo.studying.utils.Console;
 
 public class ExitCommand extends AbstractCommand{
+    private CollectionManager collectionManager;
 
-    public ExitCommand() {
+    public ExitCommand(CollectionManager collectionManager) {
         super("exit", "завершить программу (без сохранения в файл)");
+        this.collectionManager = collectionManager;
     }
 
     @Override
@@ -14,7 +17,7 @@ public class ExitCommand extends AbstractCommand{
         try {
             if (!argument.isEmpty()) throw new WrongAmountOfElementsException();
             Console.println("Завершаю программу...");
-            System.exit(0);
+            collectionManager.exit();
             return true;
         } catch (WrongAmountOfElementsException e) {
             Console.println("Использование: " + getName() + "!");
