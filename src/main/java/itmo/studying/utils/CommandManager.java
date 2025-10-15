@@ -89,13 +89,14 @@ public class CommandManager {
     }
 
     public boolean history(String argument) {
-        if (!helpCommand.execute(argument)) {
+        if (!historyCommand.execute(argument)) {
             try {
                 if (commandHistory.length == 0) throw new CommandHistoryIsEmpty();
                 Console.println("Список последних используемых команд: ");
                 for (String s : commandHistory) {
                     if (s != null) Console.print(s + ", ");
                 }
+                Console.println("");
                 return true;
             } catch (CommandHistoryIsEmpty e) {
                 Console.printError("Ни одна команда не была использована!");
