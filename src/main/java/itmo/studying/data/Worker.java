@@ -100,7 +100,13 @@ public class Worker implements Comparable<Worker> {
         if (o == null || getClass() != o.getClass()) return false;
 
         Worker worker = (Worker) o;
-        return Objects.equals(id, worker.id) && Objects.equals(name, worker.name) && Objects.equals(coordinates, worker.coordinates) && Objects.equals(creationDate, worker.creationDate) && Objects.equals(salary, worker.salary) && position == worker.position && status == worker.status && Objects.equals(organization, worker.organization);
+        return Objects.equals(id, worker.id) && Objects.equals(name, worker.name)
+                && Objects.equals(coordinates, worker.coordinates)
+                && Objects.equals(creationDate, worker.creationDate)
+                && Objects.equals(salary, worker.salary)
+                && position == worker.position
+                && status == worker.status
+                && Objects.equals(organization, worker.organization);
     }
 
     @Override
