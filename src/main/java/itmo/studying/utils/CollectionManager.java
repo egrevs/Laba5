@@ -129,7 +129,7 @@ public class CollectionManager {
         Iterator<Map.Entry<Long, Worker>> iterator = hashMap.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<Long, Worker> entry = iterator.next();
-            if (entry.getKey() >= key) {
+            if (entry.getKey() > key) {
                 iterator.remove();
             }
         }
