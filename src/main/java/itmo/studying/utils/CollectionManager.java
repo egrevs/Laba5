@@ -128,22 +128,20 @@ public class CollectionManager {
         if (key == null) throw new IllegalArgumentException("Значение ключа не может быть null");
         Iterator<Map.Entry<Long, Worker>> iterator = hashMap.entrySet().iterator();
         while (iterator.hasNext()) {
-            if (iterator.next().getKey() > key) {
-                hashMap.remove(key);
+            Map.Entry<Long, Worker> entry = iterator.next();
+            if (entry.getKey() >= key) {
+                iterator.remove();
             }
         }
     }
 
     public void removeAllByStatus(Status status) {
-        List<Long> keysToRemove = new ArrayList<>();
-
-        for (Map.Entry<Long, Worker> entry : hashMap.entrySet()) {
-            if (entry.getValue().getStatus() == status)
-                keysToRemove.add(entry.getKey());
-        }
-
-        for (Long key : keysToRemove) {
-            hashMap.remove(key);
+        Iterator<Map.Entry<Long, Worker>> iterator = hashMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            Map.Entry<Long, Worker> entry = iterator.next();
+            if (entry.getValue().getStatus() == status){
+                iterator.remove();
+            }
         }
     }
 

@@ -17,37 +17,37 @@
     }
   },
   "2": {
-    "id": 3,
-    "name": "Славик",
-    "coordinates": {
-      "x": 43,
-      "y": 6.0
-    },
-    "creationDate": "2025-10-15",
-    "salary": 800.0,
-    "position": "CLEANER",
-    "status": "HIRED",
-    "organization": {
-      "fullName": "АкваБанк",
-      "annualTurnover": 250000.0,
-      "employeesCount": 2
-    }
-  },
-  "5": {
     "id": 4,
-    "name": "John Doe",
+    "name": "ф",
     "coordinates": {
-      "x": 10,
-      "y": 20.5
+      "x": 2,
+      "y": 3.0
     },
-    "creationDate": "2025-10-15",
-    "salary": 50000.0,
+    "creationDate": "2025-11-05",
+    "salary": 4.0,
     "position": "BAKER",
     "status": "HIRED",
     "organization": {
-      "fullName": "Acme Corp",
-      "annualTurnover": 1000000.0,
-      "employeesCount": 200
+      "fullName": "ф",
+      "annualTurnover": 2.0,
+      "employeesCount": 3
+    }
+  },
+  "3": {
+    "id": 3,
+    "name": "Сергей",
+    "coordinates": {
+      "x": 2,
+      "y": 3.0
+    },
+    "creationDate": "2025-11-05",
+    "salary": 200.0,
+    "position": "BAKER",
+    "status": "HIRED",
+    "organization": {
+      "fullName": "Привет",
+      "annualTurnover": 2000.0,
+      "employeesCount": 210
     }
   }
 }
